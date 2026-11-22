@@ -1,0 +1,13 @@
+# Deplexo app configuration (place at the repository root, next to the Dockerfile).
+# Explicit YAML values override dashboard settings.
+# Docs: https://docs.deplexo.com/reference/configuration/
+version: 1
+type: web
+build:
+  framework: dockerfile
+  dockerfile: Dockerfile
+run:
+  # Port Xray (via the front proxy) listens on inside the container.
+  # Deplexo supplies the same value as the PORT env var and routes the
+  # public HTTPS subdomain to it. 8080 is arbitrary; any port 1-65535 works.
+  port: 8080
