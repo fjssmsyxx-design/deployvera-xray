@@ -56,15 +56,6 @@ config = {
         {"protocol": "freedom", "tag": "direct"},
         {"protocol": "blackhole", "tag": "blocked"},
     ],
-    "routing": {
-        "rules": [
-            {
-                "type": "field",
-                "ip": ["geoip:private"],
-                "outboundTag": "blocked",
-            }
-        ]
-    },
 }
 
 with open("/tmp/xray-config.json", "w", encoding="utf-8") as f:
